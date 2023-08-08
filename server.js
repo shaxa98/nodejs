@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 mongoose
-  .connect(`${process.env.MONGO_URL}/${process.env.MONGO_DATABASE}`, {
+  .connect(`mongodb://localhost:27017`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
