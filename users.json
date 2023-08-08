@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Bekhzod", "balance": 100, "currency": "USD" },
+  { "id": 2, "name": "Shakhzod", "balance": 1000, "currency": "USD" },
+  { "id": 3, "name": "Damir", "balance": 1, "currency": "USD" },
+  { "name": "NewUser", "balance": "100", "currency": "UZS", "id": "3" }
+]

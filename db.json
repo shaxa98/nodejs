@@ -1,0 +1,8 @@
+{
+  "database": {
+    "test": {
+      "user": [{}],
+      "accont": [{}]
+    }
+  }
+}
