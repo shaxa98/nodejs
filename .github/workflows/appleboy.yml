@@ -20,7 +20,9 @@ jobs:
           script: |
             ls -la
             cd shaxzod/api
+            whoami
             sudo su 
+            whoami
             git pull 
             npm install 
             pm2 restart all
