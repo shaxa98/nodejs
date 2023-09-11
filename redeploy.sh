@@ -28,3 +28,4 @@ exit
 
 #4 soni "pm2 ps " kada narmalni kor kaysasmi nemi tekshiri mukunam 
 EOF
+###S
