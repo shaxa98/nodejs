@@ -1,7 +1,7 @@
 name: On push main
 
 on:
-  workflows_dispatch:
+  workflow_dispatch:
 #   push:
 #     branches:
 #       - main
