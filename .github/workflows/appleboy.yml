@@ -19,9 +19,9 @@ jobs:
           key: ${{ secrets.OKOK_PEM }}
           script: |
             ls -la
-            cd shaxzod/api
+            cd api
             whoami
-            sudo su 
+            #sudo su 
             whoami
             git pull 
             npm install 
