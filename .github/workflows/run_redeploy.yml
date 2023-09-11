@@ -11,10 +11,10 @@ jobs:
       - name: Git clone repo 
         uses: actions/checkout@v4
 
-     - name: Redeploy
+      - name: Redeploy
      env: 
         PRIVATE_KEY: ${{  secrets.OKOK-PEM}}
      run: | 
-     chmode +x redeplou.sh
-     sh redeploy.sh
+      chmode +x redeplou.sh
+      sh redeploy.sh
         
