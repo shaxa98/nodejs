@@ -24,8 +24,7 @@ npm install
 #3 badi "pull" shudagesh Pm2 restart mukunam
 #npm i -g pm2 
  pm2 restart all
- sleep 5
- pm2 logs  
+exit  
 
 #4 soni "pm2 ps " kada narmalni kor kaysasmi nemi tekshiri mukunam 
 EOF
