@@ -16,13 +16,9 @@ jobs:
         with:
           host: ${{ vars.HOST_DNS }}
           username: ${{ vars.USERNAME }}
-          key: ${{ secrets.OKOK_PEM }}
+          key: ${{ secrets.MAC_PEM }}
           script: |
-            ls -la
             cd api
-            whoami
-            #sudo su 
-            whoami
             git pull 
             npm install 
             pm2 restart all
