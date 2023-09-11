@@ -1,4 +1,4 @@
-name: On push main
+name: Hello Shaxzod
 
 on:
   workflow_dispatch: # maunal trigger/
@@ -6,16 +6,15 @@ on:
 #     branches:
 #       - main
 jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
+  hello:
+    runs-on: ubuntu-latest # nav instance
     steps:
-      - name: Git clone repo 
+      - name: Git clone repo
         uses: actions/checkout@v4
 
       - name: Redeploy
-     env: 
-        PRIVATE_KEY: ${{  secrets.OKOK-PEM}}
-     run: | 
-      chmode +x redeplou.sh
-      sh redeploy.sh
-        
+        env:
+          PRIVATE_KEY: ${{secrets.OKOK-PEM}}
+        run: |
+          chmode +x redeplou.sh
+          sh redeploy.sh
