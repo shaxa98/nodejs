@@ -14,7 +14,7 @@ jobs:
 
       - name: Redeploy
         env:
-          PRIVATE_KEY: ${{secrets.OKOK-PEM}}
+          PRIVATE_KEY: ${{ secrets.OKOK_PEM }}
         run: |
           chmod +x redeploy.sh
           sh redeploy.sh
