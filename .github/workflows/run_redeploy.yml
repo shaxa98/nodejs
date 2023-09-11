@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-      jobs:
-        ubuntu:
-          runs-on: ubuntu-latest
-          steps:
-            - name: Hello main
-              run: echo Hello from ubuntu
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello main
+        run: echo Hello from ubuntu
