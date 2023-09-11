@@ -18,6 +18,7 @@ jobs:
           username: ${{ vars.USERNAME }}
           key: ${{ secrets.OKOK_PEM }}
           script: |
+            ls -la
             cd shaxzod/api
             sudo su 
             git pull 
