@@ -18,4 +18,8 @@ jobs:
           username: ${{ vars.USERNAME }}
           key: ${{ secrets.OKOK_PEM }}
           script: |
-            echo hello
+            cd shaxzod/api
+            sudo su 
+            git pull 
+            npm install 
+            pm2 restart all
