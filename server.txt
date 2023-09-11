@@ -1,4 +1,4 @@
 
 
 
-ssh -i "okok.pem" ec2-user@ec2-16-171-181-50.eu-north-1.compute.amazonaws.com
+ssh -i "/Users/shakhzod/Desktop/mac.pem" ec2-user@ec2-13-53-170-229.eu-north-1.compute.amazonaws.com
