@@ -7,6 +7,6 @@ cd nodejs
 git pull 
 npm install 
 pm2 restart all
-curl --location 'http://13.53.170.229:2500/health'
+
 exit  
 EOF
