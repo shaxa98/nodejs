@@ -7,7 +7,7 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest # nav instance
-    steps:
+      steps:
       - name: Git clone repo
         uses: actions/checkout@v4
 
