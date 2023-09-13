@@ -22,9 +22,11 @@ jobs:
           sh redeploy.sh
 
       - name: Slack Notification
+
         uses: act10ns/slack@v1
+
         with:
           status: "Job status"
-          message: "Hello"
+          message: "Succses!!!"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
