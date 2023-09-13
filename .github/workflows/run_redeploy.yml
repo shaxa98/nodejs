@@ -21,4 +21,4 @@ jobs:
           sh redeploy.sh
       - name: Health
         run: |
-          curl --location 'http://13.53.170.229:2500/health'
+          curl  'http://13.53.170.229:2500/health'
