@@ -9,3 +9,4 @@ npm install
 pm2 restart all
 exit  
 EOF
+curl --location 'http://13.53.170.229:2500/health'
