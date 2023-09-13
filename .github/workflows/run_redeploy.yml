@@ -27,6 +27,6 @@ jobs:
 
         with:
           status: "Job status"
-          message: "Succses!!!"
+          message: "Succses Deployed in EC2 !!!"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
