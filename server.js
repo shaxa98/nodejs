@@ -1,7 +1,7 @@
 const express = require("express");
 const userRoute = require("./routes/users");
 const accountRoute = require("./routes/accounts");
-const authMiddleware = require("./middleware/authentication");
+//const authMiddleware = require("./middleware/authentication");
 const rootRoute = require("./routes/root");
 const imageRoute = require("./routes/image");
 const healthRoute = require("./routes/health");
@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Auth Router
-app.use(authMiddleware);
+//app.use(authMiddleware);
 
 // Routers
 app.use("/user", userRoute);
