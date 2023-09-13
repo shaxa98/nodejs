@@ -5,9 +5,9 @@ on:
     branches:
       - main
 jobs:
-  hello:
+    hello:
     runs-on: ubuntu-latest # nav instance
-      steps:
+        steps:
       - name: Git clone repo
         uses: actions/checkout@v4
 
@@ -23,7 +23,7 @@ jobs:
 
       - name: Slack Notification
         uses: act10ns/slack@v1
-      with:
+        with:
           message: "Hello"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
