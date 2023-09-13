@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
-  jobs:
-    hello:
+
+jobs:
+  hello:
     runs-on: ubuntu-latest # nav instance
-        steps:
+    steps:
       - name: Git clone repo
         uses: actions/checkout@v4
 
@@ -19,11 +20,11 @@ on:
         run: |
           chmod +x redeploy.sh
           sh redeploy.sh
-      
 
       - name: Slack Notification
         uses: act10ns/slack@v1
         with:
+          status: "Job status"
           message: "Hello"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
