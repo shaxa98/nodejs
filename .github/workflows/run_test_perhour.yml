@@ -2,7 +2,7 @@ name: Run postman test
 
 on:
   schedule:
-    - cron: 1 * * * *
+    - cron: 01 * * * *
 
 jobs:
   hello:
