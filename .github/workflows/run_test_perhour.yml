@@ -1,8 +1,6 @@
 name: Run postman test
 
-on:
-  schedule:
-    - cron: 01 * * * *
+on: [push]
 
 jobs:
   hello:

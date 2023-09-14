@@ -1,8 +1,9 @@
 name: Hello Shaxzod
 
 on:
-  schedule:
-    - cron: 01 * * * *
+  push:
+    branches:
+      - main
 
 jobs:
   hello:
