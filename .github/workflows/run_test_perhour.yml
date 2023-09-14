@@ -9,5 +9,5 @@ jobs:
         steps:
             - name: Run Test cases
             run: |
-                npm i newman
-                newman run ./test/nodejs.postman_collection.json --env-var base_url=http://${{vars.HOST_DNS}}:2500
+                    npm i newman
+                    newman run ./test/nodejs.postman_collection.json --env-var base_url=http://${{vars.HOST_DNS}}:2500
