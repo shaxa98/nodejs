@@ -6,7 +6,7 @@ on:
 jobs:
     hello:
         runs-on: ubuntu-latest # nav instance
-        steps:
+         steps:
             - name: Run Test cases
             run:   |
                 npm i newman
