@@ -10,5 +10,4 @@ jobs:
         env:
           HOST: ${{ vars.HOST_DNS }}
         run: |
-          npm i newman
           newman run ./test/nodejs.postman_collection.json --env-var base_url=http://${{vars.HOST_DNS}}:2500
