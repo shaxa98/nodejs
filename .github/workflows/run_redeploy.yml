@@ -21,10 +21,13 @@ jobs:
           chmod +x redeploy.sh
           sh redeploy.sh
 
+      - name: Run Test cases
+        run: |
+          npm i newman
+          newman run ./test/nodejs.postman_collection.json --env-var base_url=${{vars.HOST_DNS}}
+
       - name: Slack Notification
-
         uses: act10ns/slack@v1
-
         with:
           status: "Job status"
           message: "Succses Deployed in EC2 !!!"
