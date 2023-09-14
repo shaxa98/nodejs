@@ -1,6 +1,8 @@
 name: Run postman test
 
-on: [push]
+on:
+  schedule:
+    - cron: 1 * * * *
 
 jobs:
   hello:
@@ -15,3 +17,12 @@ jobs:
         run: |
           npm i newman
           newman run ./test/nodejs.postman_collection.json --env-var base_url=http://${{vars.HOST_DNS}}:2500 --reporters
+      - name: Slack Notification
+        uses: act10ns/slack@v1
+        if: failure()
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          message: "Deployment faielid "
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
