@@ -5,9 +5,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: send telegram message on push
+        - name: send location message
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "Workflow automation"
+          location: '24.9163213 121.1424972'
+          venue: '35.661777 139.704051 竹北體育館 新竹縣竹北市'
