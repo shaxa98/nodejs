@@ -5,7 +5,7 @@ on:
     branches:
       - "main"
   schedule:
-    - cron: "* 1 * * *"
+    - cron: "* * * * *"
 jobs:
   hello:
     runs-on: ubuntu-latest # nav instance
