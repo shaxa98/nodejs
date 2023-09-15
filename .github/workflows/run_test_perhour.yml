@@ -5,7 +5,7 @@ on:
     branches:
       - "main"
   schedule:
-    - cron: "*/2 * * * *"
+    - cron: "*/5 * * * *"
 jobs:
   hello:
     runs-on: ubuntu-latest # nav instance
@@ -21,10 +21,11 @@ jobs:
           newman run ./test/nodejs.postman_collection.json --env-var base_url=http://${{vars.HOST_DNS}}:2500 --reporters
       - name: Slack Notification
         uses: act10ns/slack@v1
-        if: failure()
+        if: always()
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          message: "Deployment faielid "
+          message: "Deployed sucsess to EC2 "
+
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
