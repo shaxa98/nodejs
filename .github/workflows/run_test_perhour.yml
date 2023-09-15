@@ -21,11 +21,11 @@ jobs:
           newman run ./test/nodejs.postman_collection.json --env-var base_url=http://${{vars.HOST_DNS}}:2500 --reporters
       - name: Slack Notification
         uses: act10ns/slack@v1
-        if: always()
+        if: failure()
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          message: "Deployed sucsess to EC2 "
+          message: "Deployment faielid "
 
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
