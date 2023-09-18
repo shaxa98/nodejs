@@ -14,13 +14,14 @@ jobs:
     steps:
       - name: Git clone repo
         uses: actions/checkout@v4
-      - name: Bacuproud53
-        run: |
 
-          name53="route53-$(date +%Y%m%d_%H%M%S)"
-          hostId=${AWS_ACCESS_KEY_ID}
-          location=${pwd}
-          aws route53 list-resource-record-sets --hosted-zone-id ${hostId} >> ${name53}.json
-          aws s3 cp ${location}${name53}.json s3://mybucet01 
+      - name: File name gen
+        run: echo "FILE_NAME=route53-$(date +%Y%m%d_%H%M%S).json" >> "$GITHUB_ENV"
+
+      - name: Get list of route53 records
+        run: aws route53 list-resource-record-sets --hosted-zone-id $AWS_HOST_ID  >> $FILE_NAME
+
+      - name: Copy to s3 bucket
+        run: |
+          aws s3 cp $FILE_NAME s3://mybucet01 
           echo "Success"
-          rm -rf ${location}${name53}.json
