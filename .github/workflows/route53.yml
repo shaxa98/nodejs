@@ -17,8 +17,6 @@ jobs:
       - name: Bacuproud53
         run: |
           aws help
-          aws <command> help
-          aws <command> <subcommand> help
           name53="route53-$(date +%Y%m%d_%H%M%S)"
           hostId="Z2T8ORYN24R7IK"
           location=${pwd}
