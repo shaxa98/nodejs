@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Bacuproud53
         run: |
-          AWS_PROFILE="prod"
+
           name53="route53-$(date +%Y%m%d_%H%M%S)"
           hostId="Z2T8ORYN24R7IK"
           location=${pwd}
