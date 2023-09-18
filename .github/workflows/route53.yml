@@ -1,0 +1,26 @@
+name: route53 deployment
+
+on: [push]
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_PROD }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_PROD }}
+  AWS_DEFAULT_REGION: "us-east-1"
+  AWS_HOST_ID: ${{ secrets.AWS_HOST_ID }}
+  AWS_BUCET_DIR: ${{secrets.AWS_BUCET_DIR}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # nav instance
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v4
+      - name: Bacuproud53
+        run: |
+          name53="route53-$(date +%Y%m%d_%H%M%S)"
+          hostId="Z2T8ORYN24R7IK"
+          location=${pwd}
+          aws route53 list-resource-record-sets --hosted-zone-id ${hostId} --profile prod >> ${name53}.json
+          aws s3 cp ${location}${name53}.json s3://mybucet01 
+          echo "Success"
+          rm -rf ${location}${name53}.json
