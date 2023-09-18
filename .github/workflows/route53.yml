@@ -20,7 +20,7 @@ jobs:
           name53="route53-$(date +%Y%m%d_%H%M%S)"
           hostId="Z2T8ORYN24R7IK"
           location=${pwd}
-          aws route53 list-resource-record-sets --hosted-zone-id ${hostId} ${name53}.json
+          aws route53 list-resource-record-sets --hosted-zone-id ${hostId} --profile-prod >> ${name53}.json
           aws s3 cp ${location}${name53}.json s3://mybucet01 
           echo "Success"
           rm -rf ${location}${name53}.json
