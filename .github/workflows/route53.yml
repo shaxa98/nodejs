@@ -1,8 +1,6 @@
 name: route53 deployment
 
-on:
-  schedule:
-    - cron: 0 0 * * *
+on: workflow_dispatch
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SHAXA }}
